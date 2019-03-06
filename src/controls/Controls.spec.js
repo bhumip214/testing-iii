@@ -8,19 +8,19 @@ afterEach(cleanup);
 describe("<Control />", () => {
   it("should render both buttons when gate is closed and locked", () => {
     const { getByTestId } = render(<Control locked={true} closed={true} />);
-    const lockedBtn = getByTestId("locked-btn");
-    const closedBtn = getByTestId("closed-btn");
+    const toggleLockedBtn = getByTestId("toggle-locked-btn");
+    const toggleClosedBtn = getByTestId("toggle-closed-btn");
 
-    expect(lockedBtn).toHaveTextContent("Unlock Gate");
-    expect(closedBtn).toHaveTextContent("Open Gate");
+    expect(toggleLockedBtn).toHaveTextContent("Unlock Gate");
+    expect(toggleClosedBtn).toHaveTextContent("Open Gate");
   });
 
   it("should render both buttons when gate is open and unlock", () => {
     const { getByTestId } = render(<Control locked={false} closed={false} />);
-    const lockedBtn = getByTestId("locked-btn");
-    const closedBtn = getByTestId("closed-btn");
+    const toggleLockedBtn = getByTestId("toggle-locked-btn");
+    const toggleClosedBtn = getByTestId("toggle-closed-btn");
 
-    expect(lockedBtn).toHaveTextContent("Lock Gate");
-    expect(closedBtn).toHaveTextContent("Close Gate");
+    expect(toggleLockedBtn).toHaveTextContent("Lock Gate");
+    expect(toggleClosedBtn).toHaveTextContent("Close Gate");
   });
 });
